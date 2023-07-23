@@ -10,6 +10,7 @@ var usersRouter = require('./routes/users');
 const campsiteRouter = require('./routes/campsiteRouter');
 const promotionRouter = require('./routes/promotionRouter');
 const partnerRouter = require('./routes/partnerRouter');
+const authenticate = require('./authenticate');
 
 //connecting mongodb server with express
 const mongoose = require('mongoose');
@@ -47,6 +48,8 @@ app.use('/users', usersRouter);
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+
+//app.use(authenticate.verifyAdmin);
 
 app.use('/campsites', campsiteRouter);
 app.use('/promotions', promotionRouter);
