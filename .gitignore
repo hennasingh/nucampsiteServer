@@ -2,3 +2,5 @@ node_modules
 sessions
 bin/server.cert
 bin/server.key
+.DS_store
+config.js
